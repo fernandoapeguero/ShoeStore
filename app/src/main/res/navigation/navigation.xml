@@ -13,9 +13,21 @@
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment2"
             app:destination="@id/welcomeFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment2"
         android:name="com.udacity.shoestore.ui.WelcomeFragment"
-        android:label="WelcomeFragment" />
+        android:label="WelcomeFragment" >
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeListingFragment"
+        android:name="com.udacity.shoestore.ui.ShoeListingFragment"
+        android:label="fragment_shoe_listing"
+        tools:layout="@layout/fragment_shoe_listing" />
 </navigation>

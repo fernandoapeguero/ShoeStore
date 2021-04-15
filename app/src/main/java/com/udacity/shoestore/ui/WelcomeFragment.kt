@@ -17,6 +17,10 @@ class WelcomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(layoutInflater,
             R.layout.fragment_welcome, container, false)
+
+        val args = WelcomeFragmentArgs.fromBundle(requireArguments())
+
+        binding.welcomeUsernameTextview.text = args.username
         return binding.root
     }
 

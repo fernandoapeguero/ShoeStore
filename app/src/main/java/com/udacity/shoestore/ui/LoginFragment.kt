@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.udacity.shoestore.LoginViewModel
 import com.udacity.shoestore.R
@@ -31,20 +32,38 @@ class LoginFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.loginButton.setOnClickListener{view: View ->
+
+            view.requestFocus()
+
             binding.emailEdittext.visibility = View.GONE
+            binding.loginHeadertext.text = getString(R.string.login)
 
             val username = binding.usernameEdittext.text
-//            val email = binding.emailEdittext.text
-//            val password = binding.passwordEdittext.text
+            val password = binding.passwordEdittext.text
 
-            if(!username.isEmpty()){
-                view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment2)
+            if(!username.isEmpty() && !password.isEmpty() ){
 
+                view.findNavController().navigate(R.id.action_loginFragment_to_shoeListingFragment)
             }
         }
 
-        binding.signUp.setOnClickListener{
+        binding.signUp.setOnClickListener{view: View ->
+
+            view.requestFocus()
+
+            binding.loginHeadertext.text = getString(R.string.sign_up)
             binding.emailEdittext.visibility = View.VISIBLE
+
+            val username = binding.usernameEdittext.text
+            val email = binding.emailEdittext.text
+            val password = binding.passwordEdittext.text
+
+
+            if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString()))
+
+            }
+
         }
 
         return binding.root

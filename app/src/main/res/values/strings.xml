@@ -16,5 +16,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="profile_image">profile image</string>
     <string name="hint_email">hintingmyemail@gmail.com</string>
-    <string name="username">username</string>
+    <string name="username">Username</string>
+    <string name="shoe_listing">Shoe Listing</string>
 </resources>
