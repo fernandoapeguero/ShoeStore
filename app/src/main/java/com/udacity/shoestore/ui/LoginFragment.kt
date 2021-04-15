@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.udacity.shoestore.LoginViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
@@ -28,6 +29,23 @@ class LoginFragment : Fragment() {
         binding.loginViewModel = viewModel
 
         binding.lifecycleOwner = viewLifecycleOwner
+
+        binding.loginButton.setOnClickListener{view: View ->
+            binding.emailEdittext.visibility = View.GONE
+
+            val username = binding.usernameEdittext.text
+//            val email = binding.emailEdittext.text
+//            val password = binding.passwordEdittext.text
+
+            if(!username.isEmpty()){
+                view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment2)
+
+            }
+        }
+
+        binding.signUp.setOnClickListener{
+            binding.emailEdittext.visibility = View.VISIBLE
+        }
 
         return binding.root
     }

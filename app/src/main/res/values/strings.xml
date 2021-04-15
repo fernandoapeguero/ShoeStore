@@ -13,4 +13,8 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="profile_image">profile image</string>
+    <string name="hint_email">hintingmyemail@gmail.com</string>
+    <string name="username">username</string>
 </resources>

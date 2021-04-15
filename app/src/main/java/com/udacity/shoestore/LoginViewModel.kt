@@ -11,7 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import timber.log.Timber
 
-class LoginViewModel: ViewModel() {
+class LoginViewModel : ViewModel() {
 
     private var _username = MutableLiveData<String>()
     val username: LiveData<String>
@@ -23,13 +23,9 @@ class LoginViewModel: ViewModel() {
         get() = _password
 
 
-
-
-
-    fun login(view: View){
-
-        view.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment2)
+    fun UpdatedDataOnLogin(username: String, password: String) {
+        _username.value = username
+        _password.value = password
     }
-
 
 }
