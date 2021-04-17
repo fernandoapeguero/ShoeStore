@@ -36,6 +36,8 @@ class LoginFragment : Fragment() {
             view.requestFocus()
 
             binding.emailEdittext.visibility = View.GONE
+            binding.emailTextview.visibility = View.GONE
+
             binding.loginHeadertext.text = getString(R.string.login)
 
             val username = binding.usernameEdittext.text
@@ -47,24 +49,25 @@ class LoginFragment : Fragment() {
             }
         }
 
-        binding.signUp.setOnClickListener{view: View ->
+//        binding.signUp.setOnClickListener{view: View ->
+//
+//            view.requestFocus()
+//
+//            binding.loginHeadertext.text = getString(R.string.sign_up)
+//            binding.emailEdittext.visibility = View.VISIBLE
+//            binding.emailTextview.visibility= View.VISIBLE
+//
+//            val username = binding.usernameEdittext.text
+//            val email = binding.emailEdittext.text
+//            val password = binding.passwordEdittext.text
+//
+//
+//            if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+//                view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString()))
+//
+//            }
 
-            view.requestFocus()
-
-            binding.loginHeadertext.text = getString(R.string.sign_up)
-            binding.emailEdittext.visibility = View.VISIBLE
-
-            val username = binding.usernameEdittext.text
-            val email = binding.emailEdittext.text
-            val password = binding.passwordEdittext.text
-
-
-            if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString()))
-
-            }
-
-        }
+//        }
 
         return binding.root
     }

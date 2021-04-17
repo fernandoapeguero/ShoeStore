@@ -11,9 +11,11 @@
     <string name="login_failed">"Login failed"</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="login">Login</string>
+    <string name="login_upper">LOGIN</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sign_up_upper">SIGN UP</string>
     <string name="profile_image">profile image</string>
     <string name="hint_email">hintingmyemail@gmail.com</string>
     <string name="username">Username</string>
