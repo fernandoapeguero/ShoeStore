@@ -5,20 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.udacity.shoestore.LoginViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
-import timber.log.Timber
 
 
 class LoginFragment : Fragment() {
 
-   private  lateinit var binding: FragmentLoginBinding
-   private lateinit var viewModel: LoginViewModel
+    private lateinit var binding: FragmentLoginBinding
+    private lateinit var viewModel: LoginViewModel
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,23 +30,61 @@ class LoginFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        binding.loginButton.setOnClickListener{view: View ->
 
-            view.requestFocus()
+        var isSigningUp = false
 
-            binding.emailEdittext.visibility = View.GONE
-            binding.emailTextview.visibility = View.GONE
+        binding.loginOrSignupTextview.setOnClickListener { view: View ->
 
-            binding.loginHeadertext.text = getString(R.string.login)
+            if (!isSigningUp) {
+                binding.emailEdittext.visibility = View.VISIBLE
+                binding.emailTextview.visibility = View.VISIBLE
+
+                binding.loginOrSignupTextview.text = getString(R.string.login)
+                binding.loginHeadertext.text = getString(R.string.sign_up_upper)
+                binding.haveAccountTextview.text = getString(R.string.have_an_account_already)
+                binding.loginButton.text = getString(R.string.sign_up_upper)
+                isSigningUp = true
+
+            } else {
+                binding.emailEdittext.visibility = View.GONE
+                binding.emailTextview.visibility = View.GONE
+
+                binding.loginButton.text = getString(R.string.login_upper)
+                binding.loginOrSignupTextview.text = getString(R.string.sign_up)
+                binding.loginHeadertext.text = getString(R.string.login_upper)
+                binding.haveAccountTextview.text = getString(R.string.dont_have_account)
+                isSigningUp = false
+
+            }
+
+        }
+
+        binding.loginButton.setOnClickListener { view: View ->
 
             val username = binding.usernameEdittext.text
             val password = binding.passwordEdittext.text
+            if (!isSigningUp) {
+                if (username.isNotEmpty() && password.isNotEmpty()) {
 
-            if(!username.isEmpty() && !password.isEmpty() ){
+                    view.findNavController()
+                        .navigate(R.id.action_loginFragment_to_shoeListingFragment)
+                }
+            } else {
 
-                view.findNavController().navigate(R.id.action_loginFragment_to_shoeListingFragment)
+                val username = binding.usernameEdittext.text
+                val email = binding.emailEdittext.text
+                val password = binding.passwordEdittext.text
+
+                if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                    view.findNavController().navigate(
+                        LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString())
+                    )
+
+                }
             }
+
         }
+
 
 //        binding.signUp.setOnClickListener{view: View ->
 //
@@ -71,9 +108,6 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
-
-
-
 
 
 }
