@@ -28,4 +28,15 @@
         <item name="android:layout_width">0dp</item>
          <item name="android:ems">10</item>
     </style>
+
+    <style name="HeaderStyle">
+        <item name="fontFamily">@font/roboto_black</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/header_large_text</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
 </resources>

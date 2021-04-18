@@ -19,7 +19,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/shoe_listing"
         android:textAlignment="center"
-        android:textSize="@dimen/large_text"
+        android:textSize="@dimen/header_large_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
