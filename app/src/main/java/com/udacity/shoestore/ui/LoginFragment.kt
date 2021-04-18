@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.udacity.shoestore.LoginViewModel
+import com.udacity.shoestore.models.LoginViewModel
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 
@@ -24,16 +26,15 @@ class LoginFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_login, container, false)
-        viewModel = LoginViewModel()
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        binding.lifecycleOwner = this
 
         binding.loginViewModel = viewModel
 
-        binding.lifecycleOwner = viewLifecycleOwner
-
-
         var isSigningUp = false
 
-        binding.loginOrSignupTextview.setOnClickListener { view: View ->
+        binding.loginOrSignupTextview.setOnClickListener {
 
             if (!isSigningUp) {
                 binding.emailEdittext.visibility = View.VISIBLE
@@ -59,52 +60,25 @@ class LoginFragment : Fragment() {
 
         }
 
+
         binding.loginButton.setOnClickListener { view: View ->
 
-            val username = binding.usernameEdittext.text
-            val password = binding.passwordEdittext.text
             if (!isSigningUp) {
-                if (username.isNotEmpty() && password.isNotEmpty()) {
+                if (viewModel.username.toString().isNotEmpty() && viewModel.password.toString().isNotEmpty()) {
 
                     view.findNavController()
                         .navigate(R.id.action_loginFragment_to_shoeListingFragment)
                 }
             } else {
 
-                val username = binding.usernameEdittext.text
-                val email = binding.emailEdittext.text
-                val password = binding.passwordEdittext.text
-
-                if (username.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                if (viewModel.username.toString().isNotEmpty() && viewModel.email.toString().isNotEmpty() && viewModel.password.toString().isNotEmpty()) {
                     view.findNavController().navigate(
-                        LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString())
+                        LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(viewModel.username.value.toString())
                     )
-
                 }
             }
 
         }
-
-
-//        binding.signUp.setOnClickListener{view: View ->
-//
-//            view.requestFocus()
-//
-//            binding.loginHeadertext.text = getString(R.string.sign_up)
-//            binding.emailEdittext.visibility = View.VISIBLE
-//            binding.emailTextview.visibility= View.VISIBLE
-//
-//            val username = binding.usernameEdittext.text
-//            val email = binding.emailEdittext.text
-//            val password = binding.passwordEdittext.text
-//
-//
-//            if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-//                view.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment2(username.toString()))
-//
-//            }
-
-//        }
 
         return binding.root
     }

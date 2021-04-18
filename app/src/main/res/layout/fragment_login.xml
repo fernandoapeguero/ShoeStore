@@ -8,7 +8,7 @@
 
         <variable
             name="loginViewModel"
-            type="com.udacity.shoestore.LoginViewModel" />
+            type="com.udacity.shoestore.models.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -50,6 +50,7 @@
             style="@style/EdittextStyle"
             android:layout_marginTop="8dp"
             android:autofillHints=""
+            android:text="@={loginViewModel._username}"
             android:background="@drawable/bg_edittext"
             android:inputType="textPersonName"
             android:paddingStart="16dp"
@@ -80,8 +81,8 @@
             android:inputType="textEmailAddress"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@{loginViewModel.username}"
             android:visibility="gone"
+            android:text="@={loginViewModel._email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_textview" />
@@ -107,7 +108,7 @@
             android:inputType="textPassword"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:text="@{loginViewModel.password}"
+            android:text="@={loginViewModel._password}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password_textview" />
