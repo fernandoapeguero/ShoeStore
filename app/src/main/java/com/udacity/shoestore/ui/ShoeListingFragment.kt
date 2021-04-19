@@ -32,9 +32,6 @@ class ShoeListingFragment : Fragment() {
         var shoes = ShoeList()
 
 
-//        val mytextView = TextView(context)
-//        mytextView.text = shoes.shoes[0].name
-//        mytextView.setPadding(8)
 
         val newView = inflater.inflate(R.layout.customlayout, container , false)
         newView.name.text = shoes.shoes[1].name

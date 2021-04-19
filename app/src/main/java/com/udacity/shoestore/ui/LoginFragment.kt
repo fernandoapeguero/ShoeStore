@@ -75,7 +75,7 @@ class LoginFragment : Fragment() {
             if (!isSigningUp) {
                 if (viewModel.username.value.toString().isNotEmpty() && viewModel.password.value.toString().isNotEmpty()) {
 
-                    view.findNavController().navigate(R.id.action_welcomeFragment2_to_shoeListingFragment)
+                    view.findNavController().navigate(R.id.action_loginFragment_to_shoeListingFragment)
                 } else {
                     Toast.makeText(context, "Please fill everything.", Toast.LENGTH_SHORT).show()
                 }
