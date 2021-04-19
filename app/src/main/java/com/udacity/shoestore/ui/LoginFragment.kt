@@ -10,13 +10,10 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentLoginBinding
 import com.udacity.shoestore.models.LoginViewModel
-import kotlinx.android.synthetic.main.fragment_login.*
 
 
 class LoginFragment : Fragment() {
@@ -36,6 +33,8 @@ class LoginFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.loginViewModel = viewModel
+
+        setHasOptionsMenu(false)
 
         var isSigningUp = false
 

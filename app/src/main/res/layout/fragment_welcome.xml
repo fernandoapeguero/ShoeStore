@@ -10,7 +10,6 @@
         android:padding="34dp"
         tools:context=".ui.WelcomeFragment">
 
-
         <TextView
             style="@style/HeaderStyle"
             android:id="@+id/textView"
