@@ -19,17 +19,16 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:contentDescription="@string/shoe_image"
+            android:contentDescription="@string/shoe"
             android:elevation="2dp"
             android:src="@drawable/outline_search_24"
             app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-            app:layout_constraintEnd_toEndOf="@+id/username_edittext"
-            app:layout_constraintTop_toTopOf="@+id/username_edittext" />
+            app:layout_constraintEnd_toEndOf="@+id/search_edittext"
+            app:layout_constraintTop_toTopOf="@+id/search_edittext" />
 
         <EditText
             android:id="@+id/search_edittext"
             style="@style/EdittextStyle"
-            android:layout_marginTop="8dp"
             android:autofillHints=""
             android:background="@drawable/bg_edittext"
             android:inputType="textPersonName"
@@ -37,7 +36,7 @@
             android:paddingEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_textview" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <ScrollView
@@ -49,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/username_edittext">
+            app:layout_constraintTop_toBottomOf="@+id/search_edittext">
 
             <LinearLayout
                 android:id="@+id/view_holder"
@@ -70,9 +69,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#FF8303"
-            android:contentDescription="@string/add_to_cart"
             android:src="@drawable/outline_add_24"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/add_to_cart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
