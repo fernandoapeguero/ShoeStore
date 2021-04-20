@@ -3,6 +3,7 @@ package com.udacity.shoestore
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -16,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         @Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.myNavFragment) as NavHostFragment
         val navController = navHostFragment.navController
+
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 

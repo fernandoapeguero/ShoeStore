@@ -25,14 +25,30 @@
             android:name="username"
             app:argType="string" />
         <action
-            android:id="@+id/action_welcomeFragment2_to_shoeListingFragment"
-            app:destination="@id/shoeListingFragment"
-            app:popUpTo="@id/welcomeFragment2"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_welcomeFragment2_to_instructionsFragment2"
+            app:destination="@id/instructionsFragment2" />
     </fragment>
     <fragment
         android:id="@+id/shoeListingFragment"
         android:name="com.udacity.shoestore.ui.ShoeListingFragment"
         android:label="fragment_shoe_listing"
-        tools:layout="@layout/fragment_shoe_listing" />
+        tools:layout="@layout/fragment_shoe_listing" >
+        <action
+            android:id="@+id/action_shoeListingFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment2"
+        android:name="com.udacity.shoestore.ui.InstructionsFragment"
+        android:label="InstructionsFragment" >
+        <action
+            android:id="@+id/action_instructionsFragment2_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment"
+            app:popUpTo="@id/welcomeFragment2"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.udacity.shoestore.ui.DetailFragment"
+        android:label="DetailFragment" />
 </navigation>

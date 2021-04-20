@@ -39,4 +39,7 @@
         <item name="textAllCaps">true</item>
     </style>
 
+    <style name="MyRadioButtonStyle" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:button">@drawable/custom_radiobutton</item>
+    </style>
 </resources>

@@ -26,4 +26,16 @@
     <string name="welcome_description_text">Largest selection of shoes world wide awaits you ahead every sneaker head weet dream. Any style and for any purpose. Running shoes, walking, stylish go ahead in to shoe eden.</string>
     <string name="done">Done</string>
     <string name="add_to_cart">Add to cart</string>
+    <string name="next">next</string>
+    <string name="rules">Rules</string>
+    <string name="rules_text">You must be over 18 old to make any purchases and have a valid ID from the state you live in and the information must match your credit or debit card information</string>
+    <string name="instructions">Instructions</string>
+    <string name="nike_air_jordan">Nike Air Jordan</string>
+    <string name="marine_blue">Marine Blue</string>
+    <string name="size_29">Size: 29</string>
+    <string name="price_249">Price: $249</string>
+    <string name="following_the_release_of_a_matching_mid_top_in_2014_this_crispy_colorway_unites_the_iconic_air_jordan_11_with_an_ice_cold_color_scheme_featuring_white_and_frosty_accents_of_legend_blue_familiar_details_include_mj_s_number_23_on_the_heel_and_glittering_patent_leather_across_the_mudguard_while_an_icon_on_the_shoe_s_insole_marks_the_silhouette_s_25th_anniversary_grab_this_piece_of_footwear_history_before_the_celebration_ends">Following the release of a matching mid-top in 2014, this crispy colorway unites the iconic Air Jordan 11 with an ice-cold color scheme featuring white and frosty accents of Legend Blue. Familiar details include MJ\'s number 23 on the heel and glittering patent leather across the mudguard, while an icon on the shoe\'s insole marks the silhouette\'s 25th anniversary. Grab this piece of footwear history before the celebration ends.</string>
+    <string name="log_out">Log Out</string>
+    <string name="shoe_image">Shoe Image</string>
+    <string name="detail_image">detail image</string>
 </resources>
