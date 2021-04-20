@@ -7,3 +7,8 @@ Shoe store app where you can find and search for shoes.
 
 there is a search screen and log out option 
 
+
+![Capture](https://user-images.githubusercontent.com/25759298/115336880-05294f80-a16e-11eb-8de9-c80c66c73993.PNG)
+
+
+most of the screen are Implemented still working on the search page design.
