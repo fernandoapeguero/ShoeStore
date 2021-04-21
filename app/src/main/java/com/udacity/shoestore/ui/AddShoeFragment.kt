@@ -18,7 +18,6 @@ import com.udacity.shoestore.models.ShoeListViewModel
 class AddShoeFragment : Fragment() {
 
     private lateinit var binding: FragmentAddShoeBinding
-//    private lateinit var viewModel: ShoeListViewModel
 
     private val viewModel: ShoeListViewModel by activityViewModels()
     override fun onCreateView(
