@@ -34,6 +34,11 @@ class AddShoeFragment : Fragment() {
             activity?.onBackPressed()
         }
 
+        binding.cancelSubmittion.setOnClickListener {
+            viewModel.reset_variables()
+
+            activity?.onBackPressed()
+        }
         binding.addShoeViewModel = viewModel
 
         return binding.root

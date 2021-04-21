@@ -9,6 +9,7 @@
             name="addShoeViewModel"
             type="com.udacity.shoestore.models.ShoeListViewModel" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,9 +45,9 @@
             android:autofillHints=""
             android:background="@drawable/bg_edittext"
             android:inputType="textPersonName"
-            android:text="@={addShoeViewModel._shoeName}"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
+            android:text="@={addShoeViewModel._shoeName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/name_textview"
             app:layout_constraintTop_toBottomOf="@+id/name_textview" />
@@ -66,11 +67,11 @@
             android:layout_marginEnd="8dp"
             android:autofillHints=""
 
-            android:text="@={addShoeViewModel._shoeSize}"
             android:background="@drawable/bg_edittext"
             android:inputType="numberDecimal"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
+            android:text="@={addShoeViewModel._shoeSize}"
             app:layout_constraintEnd_toStartOf="@+id/company_edittext"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,8 +95,8 @@
             android:background="@drawable/bg_edittext"
             android:inputType="text"
             android:paddingStart="16dp"
-            android:text="@={addShoeViewModel._shoeCompany}"
             android:paddingEnd="16dp"
+            android:text="@={addShoeViewModel._shoeCompany}"
             app:layout_constraintBottom_toBottomOf="@+id/size_edittext"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -117,7 +118,6 @@
             style="@style/EdittextStyle"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:text="@={addShoeViewModel._shoeDescription}"
             android:layout_marginBottom="34dp"
             android:autofillHints=""
             android:background="@drawable/bg_edittext"
@@ -126,6 +126,7 @@
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             android:paddingEnd="16dp"
+            android:text="@={addShoeViewModel._shoeDescription}"
             app:layout_constraintBottom_toTopOf="@+id/submit_shoe"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -134,17 +135,33 @@
             app:layout_constraintVertical_bias="0.495" />
 
         <Button
+            android:id="@+id/cancel_submittion"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/button_ripple"
+            android:text="@string/cancel"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/submit_shoe"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/submit_shoe" />
+
+        <Button
             android:id="@+id/submit_shoe"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="0dp"
             android:layout_height="48dp"
+            android:layout_marginStart="8dp"
             android:background="@drawable/button_ripple"
             android:text="@string/submit"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cancel_submittion" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

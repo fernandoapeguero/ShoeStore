@@ -15,7 +15,7 @@ class ShoeListViewModel : ViewModel() {
     val _shoeDescription = MutableLiveData<String>()
 
 
-    fun addShoe(): Boolean {
+    fun addShoe() {
 
         if(_shoeName.value.toString().isNotEmpty() && _shoeCompany.value.toString().isNotEmpty() && _shoeDescription.value.toString().isNotEmpty() && _shoeSize.value.toString().isNotEmpty()) {
              _shoes.value?.add(Shoe(
@@ -25,14 +25,23 @@ class ShoeListViewModel : ViewModel() {
                 _shoeDescription.value.toString()
             ))
 
-            _shoeName.value = ""
-            _shoeCompany.value=""
-            _shoeSize.value = ""
-            _shoeDescription.value = ""
+            reset_variables()
 
-            return true
         }
+    }
 
-        return false
+
+    fun cancelSubmittion() {
+
+        reset_variables()
+    }
+
+
+    fun reset_variables() {
+
+        _shoeName.value = ""
+        _shoeCompany.value=""
+        _shoeSize.value = ""
+        _shoeDescription.value = ""
     }
 }
