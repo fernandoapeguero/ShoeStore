@@ -83,7 +83,7 @@ class ShoeListingFragment : Fragment() {
     }
 
     fun seeDetail(view: View) {
-
+        Toast.makeText(activity, "${view.description}", Toast.LENGTH_SHORT).show()
         view.findNavController().navigate(R.id.action_shoeListingFragment_to_detailFragment)
     }
 }

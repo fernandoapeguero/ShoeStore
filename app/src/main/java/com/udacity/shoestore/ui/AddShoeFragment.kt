@@ -31,7 +31,7 @@ class AddShoeFragment : Fragment() {
         binding.submitShoe.setOnClickListener{ view: View ->
             viewModel.addShoe()
 
-            activity?.supportFragmentManager?.popBackStack()
+            activity?.onBackPressed()
         }
 
         binding.addShoeViewModel = viewModel
