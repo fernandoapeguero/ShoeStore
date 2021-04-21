@@ -3,5 +3,6 @@
     <dimen name="fragment_horizontal_margin">16dp</dimen>
     <dimen name="fragment_vertical_margin">16dp</dimen>
     <dimen name="header_large_text">48sp</dimen>
+    <dimen name="uniform_layout_padding">34dp</dimen>
 
 </resources>

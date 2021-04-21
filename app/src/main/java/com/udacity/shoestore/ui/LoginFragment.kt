@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -48,6 +49,9 @@ class LoginFragment : Fragment() {
                 binding.loginHeadertext.text = getString(R.string.sign_up)
                 binding.haveAccountTextview.text = getString(R.string.have_an_account_already)
                 binding.loginButton.text = getString(R.string.sign_up)
+
+                (activity as AppCompatActivity).supportActionBar?.title = "Sign Up"
+
                 isSigningUp = true
 
             } else {
@@ -58,6 +62,9 @@ class LoginFragment : Fragment() {
                 binding.loginOrSignupTextview.text = getString(R.string.sign_up)
                 binding.loginHeadertext.text = getString(R.string.login)
                 binding.haveAccountTextview.text = getString(R.string.dont_have_account)
+
+                (activity as AppCompatActivity).supportActionBar?.title = "Login"
+
                 isSigningUp = false
 
             }

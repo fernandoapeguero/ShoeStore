@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:background="@color/background_color"
         tools:context=".ui.ShoeListingFragment"
-        android:padding="16dp">
+        android:padding="@dimen/uniform_layout_padding">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="@+id/search_edittext" />
 
         <EditText
+            android:hint="@string/search"
             android:id="@+id/search_edittext"
             style="@style/EdittextStyle"
             android:autofillHints=""

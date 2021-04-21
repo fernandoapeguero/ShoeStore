@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color"
-        android:padding="34dp"
+        android:padding="@dimen/uniform_layout_padding"
         tools:context=".InstructionsFragment">
 
         <TextView
@@ -72,7 +72,7 @@
         <Button
             android:id="@+id/done_button"
             android:layout_width="0dp"
-            android:layout_height="38dp"
+            android:layout_height="48dp"
             android:layout_marginBottom="16dp"
             android:background="@drawable/button_ripple"
             android:text="@string/done"

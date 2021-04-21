@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background_color"
-        android:padding="34dp"
+        android:padding="@dimen/uniform_layout_padding"
         tools:context=".ui.LoginFragment">
 
         <TextView
@@ -31,8 +31,6 @@
         <TextView
             android:id="@+id/username_textview"
             style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             android:labelFor="@id/username_edittext"
             android:text="@string/username"
@@ -58,12 +56,9 @@
         <TextView
             android:id="@+id/email_textview"
             style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:labelFor="@id/email_edittext"
             android:text="@string/email"
-            android:textStyle="bold"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username_edittext" />
@@ -86,11 +81,8 @@
         <TextView
             android:id="@+id/password_textview"
             style="@style/TextStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/password"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email_edittext" />
 

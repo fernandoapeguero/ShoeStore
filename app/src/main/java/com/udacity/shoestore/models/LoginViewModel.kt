@@ -11,8 +11,6 @@ import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel(){
 
-    var userList = mutableListOf<Users>()
-
     val _username = MutableLiveData<String>()
 
     val username: LiveData<String>
@@ -37,8 +35,4 @@ class LoginViewModel : ViewModel(){
         _password.value = ""
     }
 
-
-    fun AddUser(username: String, email: String, password: String){
-
-    }
 }
