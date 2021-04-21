@@ -43,8 +43,8 @@ class ShoeListingFragment : Fragment() {
                 val newView = inflater.inflate(R.layout.customlayout, container, false)
                 newView.name.text = item.name
                 newView.description.text = item.description
-                newView.detail.setOnClickListener {
-                    seeDetail(it)
+                newView.detail.setOnClickListener { view: View ->
+                    seeDetail(view)
                 }
                 newView.shoe_image.setImageResource(R.drawable.air_jordan)
 
@@ -83,7 +83,6 @@ class ShoeListingFragment : Fragment() {
     }
 
     fun seeDetail(view: View) {
-        Toast.makeText(activity, "${view.description}", Toast.LENGTH_SHORT).show()
         view.findNavController().navigate(R.id.action_shoeListingFragment_to_detailFragment)
     }
 }

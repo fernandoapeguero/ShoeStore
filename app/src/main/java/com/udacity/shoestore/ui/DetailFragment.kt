@@ -20,7 +20,6 @@ class DetailFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_detail, container, false)
 
-
         return binding.root
     }
 
